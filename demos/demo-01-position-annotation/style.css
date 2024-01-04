@@ -2,3 +2,9 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
+
+.annotation {
+	position: absolute;
+	border: 10px solid red;
+	background: white;
+}

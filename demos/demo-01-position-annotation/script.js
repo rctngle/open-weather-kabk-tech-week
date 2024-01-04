@@ -1,24 +1,39 @@
-function fetchAndParseCSV(url) {
-	return axios.get(url).then(response => {
+document.addEventListener("DOMContentLoaded", event => {
+	axios.get('data.csv').then(response => {
 		return new Promise((resolve, reject) => {
 			Papa.parse(response.data, {
 				header: true,
+				dynamicTyping: true,
 				complete: results => {
-					resolve(results.data);
+					plotAnnotations(results.data)
 				},
 				error: error => {
-					reject(error);
+					reject(error)
 				}
-			});
-		});
+			})
+		})
 	}).catch(error => {
-		console.error('Error fetching or parsing the CSV:', error);
-		throw error;
-	});
-}
+		console.error('Error fetching or parsing the CSV:', error)
+		throw error
+	})
+})
 
-fetchAndParseCSV('data.csv').then(jsonData => {
-	console.log(jsonData); 
-}).catch(error => {
-	console.error('Error processing the CSV:', error);
-});
+function plotAnnotations(data) {
+	
+	const container = document.getElementById('annotations')
+	
+	data.forEach(entry => {
+		
+		const div = document.createElement('div')
+		div.classList.add('annotation')
+		
+		div.style.left = entry.x + 'px'
+		div.style.top = entry.y + 'px'
+		div.style.width = entry.width + 'px'
+		div.style.height = entry.height + 'px'
+		
+		div.textContent = entry.annotation
+
+		container.appendChild(div)
+	})
+}
