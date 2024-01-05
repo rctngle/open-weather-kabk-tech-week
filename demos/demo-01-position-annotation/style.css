@@ -3,8 +3,53 @@ html, body {
 	padding: 0;
 }
 
+body {
+	background: #000;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.annotations {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.annotations__inner {
+	position: relative;
+	border: 1px solid #fff;
+}
+
 .annotation {
 	position: absolute;
-	border: 10px solid red;
-	background: white;
+	border: 1px solid red;
+	padding: 5px;
+	font-size: 11px;
+	color: #FFF;
+}
+
+.annotation.invert {
+	background: red;
+	color: #FFF;
+	border-color: #000;
+}
+
+.annotation.invert:hover {
+	background: #000;
+	color: #FFF;
+}
+
+.annotation:hover {
+	background: red;
+	color: #FFF;
+}
+
+
+.title {
+	padding: 20px;
+	position: fixed;
+	color: #fff;
+
 }

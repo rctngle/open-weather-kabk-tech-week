@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", event => {
 
 function plotAnnotations(data) {
 	
-	const container = document.getElementById('annotations')
+	const container = document.querySelector('.annotations__inner')
 	
 	data.forEach(entry => {
-		
+		console.log(entry)
 		const div = document.createElement('div')
 		div.classList.add('annotation')
 		
@@ -32,7 +32,11 @@ function plotAnnotations(data) {
 		div.style.width = entry.width + 'px'
 		div.style.height = entry.height + 'px'
 		
-		div.textContent = entry.annotation
+		div.textContent = entry['annotation text']
+
+		if(entry['annotation class']){
+			div.classList.add(entry['annotation class'])
+		}
 
 		container.appendChild(div)
 	})

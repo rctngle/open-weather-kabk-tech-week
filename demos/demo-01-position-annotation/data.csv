@@ -1,4 +1,4 @@
-x,y,width,height,annotation
-200,200,40,40,Foo
-500,500,100,100,Bar
-800,800,10,10,Baz
+x,y,width,height,annotation text,annotation class
+780,1066,140,145,"Mr Gérald Darmanin, and the Home Secretary of the UK, Ms Priti Patel, approved today the strengthening of their joint action and cooperation to prevent illegal immigration at the shared border, with a particular focus on small boats crossings.",
+298,728,120,80,The absolute maximum temperature in Iceland in 2021 recorded in Reykjavík – 20.9°C on 20 July ,invert
+900,1600,95,60,Morocco: Uyghur Activist at Risk of Extradition,
