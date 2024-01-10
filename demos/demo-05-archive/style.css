@@ -4,7 +4,9 @@ html, body {
 }
 
 body {
-	
+	line-height: 1.3;
+	font-family: sans-serif;
+	background: #999;
 }
 
 * {
@@ -12,17 +14,23 @@ body {
 }
 
 .entries {
-	padding: 20px;
+	padding: 10px;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 20px;
+	grid-template-columns: repeat(20, 1fr);
+	grid-gap: 5px;
 }
 
 .entry {
-	border: 1px solid red;
-	padding: 20px;
+	background: #FFF;
+	padding: 5px;
+	font-size: 15px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
 }
 
 img {
-	width: 200px;
+	width: 100%;
+	height: auto;
+	display: block;
 }

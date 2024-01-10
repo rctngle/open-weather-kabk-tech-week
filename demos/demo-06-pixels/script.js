@@ -4,7 +4,6 @@ const pixelvalues = [53, 50, 39, 46, 9, 42, 2, 24, 15, 30, 33, 40, 30, 36, 24, 2
 document.addEventListener("DOMContentLoaded", event => {
 	const container = document.querySelector('.pixels')
 	for (let i in pixelvalues){
-		console.log(pixelvalues[i])
 		const div = document.createElement('div')
 		div.style.backgroundColor = 'rgba('+pixelvalues[i]+','+pixelvalues[i]+','+pixelvalues[i]+')'
 		container.appendChild(div)

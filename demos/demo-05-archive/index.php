@@ -26,9 +26,11 @@ function getData($filepath) {
 
 function getFilename($url) {
 	$queryString = parse_url($url, PHP_URL_QUERY);
-	parse_str($queryString, $queryParams);
-	if ($queryParams['id']) {
-		return $queryParams['id'] . '.jpg';
+	if($queryString){
+		parse_str($queryString, $queryParams);
+		if ($queryParams['id']) {
+			return $queryParams['id'] . '.jpg';
+		}
 	}
 	return false;
 }
@@ -80,16 +82,18 @@ $data = getData('data.csv');
 
 			<div class="entry">
 				<div><?php echo $entry['Describe your location']; ?></div>
-				<div class="entry__image">
-					<?php if ($passFileName): ?>
-						<img src="files/<?php echo $passFileName; ?>" />
-					<?php endif; ?>
-				</div>
+				<div>
+					<div class="entry__image">
+						<?php if ($passFileName): ?>
+							<img src="files/<?php echo $passFileName; ?>" />
+						<?php endif; ?>
+					</div>
 
-				<div class="entry__additionalimages">
-					<?php foreach($additionalFilenames as $additionalFilename): ?>
-						<img src="files/<?php echo $additionalFilename; ?>" />
-					<?php endforeach; ?>
+					<div class="entry__additionalimages">
+						<?php foreach($additionalFilenames as $additionalFilename): ?>
+							<img src="files/<?php echo $additionalFilename; ?>" />
+						<?php endforeach; ?>
+					</div>
 				</div>
 			</div>
 
