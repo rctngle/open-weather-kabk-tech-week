@@ -1,0 +1,37 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.pixels {
+	display: flex;
+	flex-flow: row wrap;
+
+}
+.pixels div {
+	width: 10px;
+	height: 10px;
+
+}
+
+.title {
+	position: fixed;
+	right: 0;
+	z-index: 1;
+	padding: 20px;
+	background: blue;
+	color: #FFF;
+}
+
+.pixels div:hover {
+	transform: scale(4);
+	border: 0.5px solid blue;
+}
